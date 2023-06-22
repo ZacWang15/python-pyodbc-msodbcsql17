@@ -1,4 +1,4 @@
-# pyodbc-msodbcsql17
+# pyodbc-msodbcsql17-Python3.10.12
 
 ## Overview
 
