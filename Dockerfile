@@ -15,6 +15,11 @@ ADD odbcinst.ini /etc/odbcinst.ini
 # UPGRADE pip3
 RUN pip3 install --upgrade pip
 
+# CHANGE openssl
+RUN chmod +rwx /etc/ssl/openssl.cnf
+RUN sed -i 's/TLSv1.2/TLSv1/g' /etc/ssl/openssl.cnf
+RUN sed -i 's/SECLEVEL=2/SECLEVEL=1/g' /etc/ssl/openssl.cnf
+
 # DEPENDECES FOR DOWNLOAD ODBC DRIVER
 RUN apt-get install apt-transport-https 
 RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
